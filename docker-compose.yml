@@ -1,0 +1,9 @@
+mqtt:
+    image: prologic/mosquitto
+
+broker:
+    build: .
+    links:
+        - mqtt
+    environment:
+        - VIRTUALHOST=broker.vz1.bne.shortcircuit.net.au
