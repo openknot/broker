@@ -28,6 +28,7 @@ class MQTT(Component):
         self.client.on_message = self._on_message
 
         self.client.connect(host, port)
+        self.client.loop_start()
 
     def _on_connect(self, client, userdata, flags, rc):
         print("Connected with result code {0}".format(rc))
